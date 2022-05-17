@@ -1,0 +1,22 @@
+.wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0px auto;
+
+  @include smallDesk {
+    padding: 0 toRem(92);
+  }
+
+  @include tablet {
+    padding: 0 toRem(20)
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.content {
+  max-width: toRem(360);
+}

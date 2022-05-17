@@ -1,0 +1,87 @@
+.home {
+  &_intro {
+    position: relative;
+    min-height: calc(100vh - 88px);
+    width: 100%;
+    overflow: hidden;
+
+    .illu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50vw;
+      height: 50vw;
+      transform: translate(20%, -80px);
+
+      &_wrap {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    
+    .content {
+      min-height: calc(100vh - 88px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &_about {
+    position: relative;
+    z-index: 2;
+    margin-top: toRem(80);
+
+    .illu {
+      position: relative;
+      display: flex;
+
+      &_wrap {
+        position: relative;
+        transform: translateY(105px);
+
+        img {
+          border-radius: 0 toRem(16) toRem(16) 0;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0%;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: white;
+          z-index: -1;
+          transform: translate(32px, 32px) scaleX(1.1);
+          border-radius: 0 toRem(16) toRem(16) 0;
+          transform-origin: center right;
+        }
+      }
+    }
+
+    .wrap {
+      @include smallDesk {
+        padding-left: 0;
+      }
+  
+      @include tablet {
+        padding-left: 0;
+      }
+    }
+
+    &_title {
+      font-size: toRem(18);
+      font-weight: 900;
+      margin: 0 0 toRem(24) 0;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.editor {
+  font-size: toRem(14);
+  font-style: normal;
+  font-weight: 300;
+  line-height: toRem(32);
+  color: $grey;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: toRem(34);
+  font-family: $font;
+  margin-top: 0;
+  margin-bottom: toRem(16);
+}
+
+.subtitle {
+  font-size: toRem(26);
+  font-family: $font;
+  margin-top: 0;
+  margin-bottom: toRem(16);
+  font-weight: 600;
+  line-height: toRem(42);
+}
+
+.t {
+  &--green {
+    color: $green;
+  }
+
+  &--yellow {
+    color: $yellow;
+  }
+}

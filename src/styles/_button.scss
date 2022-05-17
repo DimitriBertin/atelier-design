@@ -1,0 +1,22 @@
+.btn {
+  // display: 
+  padding: toRem(16) toRem(24);
+  font-size: toRem(13);
+  font-family: $font;
+  font-weight: 800;
+  letter-spacing: toRem(1);
+  color: black;
+  background: $grey;
+  border: 0;
+  border-radius: toRem(12);
+  text-decoration: none;
+
+  &--yellow {
+    background: $yellow;
+  }
+
+  &--green {
+    color: white;
+    background: $green;
+  }
+}

@@ -1,0 +1,58 @@
+.header {
+  position: relative;
+  z-index: 999;
+  
+  &_logo {
+    height: 88px;
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  &_nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1024px;
+    background: white;
+    border-radius: 0 0 0 toRem(10);
+    display: flex;
+    align-items: center;
+    padding: 0 toRem(50);
+    box-shadow:9px 19px 43px rgba(0, 0, 0, 0.09);
+
+    @include smallDesk {
+      max-width: 800px;
+    }
+  }
+
+  &_menu {
+    display: flex;
+    align-items: center;
+    height: 88px;
+    list-style: none;
+    margin: 0 toRem(40) 0 0;
+    padding: 0;
+
+    a {
+      font-size: toRem(13);
+      font-weight: 800;
+      color: black;
+      text-decoration: none;
+    }
+
+    li {
+      &:not(:last-child) {
+        @include minTablet {
+          margin-right: toRem(32);
+        }
+      }
+    }
+  }
+
+  &_wrap {
+    display: flex;
+    align-items: center;
+  }
+}

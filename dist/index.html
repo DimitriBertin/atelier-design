@@ -6,43 +6,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Atelier Design by Dimitri Bertin</title>
-  <link rel="stylesheet" href="./style.css">
+  <!-- <link rel="preload" href="./assets/fonts/fonts.css" as="style"> -->
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<bod class="home">
   <header class="header">
     <div class="wrap">
-      <nav class="header_nav" role="navigation" aria-label="Menu principal">
-        <a href="/">
+      <nav class="header_wrap" role="navigation" aria-label="Menu principal">
+        <a href="/" class="header_logo">
           <img src="./assets/images/LOGO SOLARLY.svg" alt="Solarly" />
         </a>
-        <button type="button" class="header_btnMenu btn btn--yellow mobile">
-          <span class="sr-only">Ouvrir le</span> Menu
-        </button>
-        <ul class="header__menu">
-          <li>
-            <a href="/solutions">Solutions</a>
-          </li>
-          <li>
-            <a href="/a-propos">À propos</a>
-          </li>
-          <li>
-            <a href="/impact">Impact</a>
-          </li>
-          <li>
-            <a href="/actualites">Actualités</a>
-          </li>
-          <li>
-            <a href="/faq">FAQ</a>
-          </li>
-        </ul>
-        <a href="/contact" class="btn btn--yellow"> Contact</a>
+        <div class="header_nav">
+          <button type="button" class="header_btnMenu btn btn--yellow mobile">
+            <span class="sr-only">Ouvrir le</span> Menu
+          </button>
+          <ul class="header_menu">
+            <li>
+              <a href="/solutions">Solutions</a>
+            </li>
+            <li>
+              <a href="/a-propos">À propos</a>
+            </li>
+            <li>
+              <a href="/impact">Impact</a>
+            </li>
+            <li>
+              <a href="/actualites">Actualités</a>
+            </li>
+            <li>
+              <a href="/faq">FAQ</a>
+            </li>
+          </ul>
+          <a href="/contact" class="btn btn--yellow"> Contact</a>
+          <div class="lang">
+            <button type="button" class="lang_button">FR </button>
+            <ul class="lang_select">
+              <li><a href="/">FR</a></li>
+              <li><a href="/en">EN</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
+     
     </div>
   </header>
   <main role="main">
-    <!--  -->
+    <!-- INTRO -->
+    <section class="home_intro">
+      <div class="wrap grid">
+        <div class="content">
+          <h1 class="title">Des solutions solaires innovantes qui apportent à tous <span class="t--green">un accès fiable à
+              l'énergie</span></h1>
+          <div class="editor">
+            <p>Aujourd'hui, plus de 590 millions de personnes en Afrique sub-saharienne n'ont pas accès à l'électricité. Nous
+              avons
+              donc développé des systèmes solaires connectés, abordables et durables pour les ménages, les entreprises et les
+              lieux
+              communautaires.</p>
+          </div>
+          <a href="/contact" class="btn btn--yellow">Découvrez nos kits solaire</a>
+        </div>
+        <div class="illu">
+          <!-- ILLU -->
+          <div class="illu_wrap">
+            <img src="./assets/images/intro.jpg" alt="Mise en place de panneaux solaire en Afrique" />
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <!-- ABOUT -->
+    <section class="home_about">
+      <div class="wrap grid">
+        <div class="illu">
+          <div class="illu_wrap">
+            <!-- Illu -->
+            <img src="./assets/images/about.jpg" alt="Solution solaire en Afrique" />
+          </div>
+        </div>
+        <div class="content">
+          <p class="t--green home_about_title">About</p>
+          <h2 class="subtitle">Avancez dans la vie avec une solution adaptée <span class="t--green">à vos besoins</span></h2>
+          <div class="editor">
+            <p>Aujourd'hui, plus de 590 millions de personnes en Afrique sub-saharienne n'ont pas accès à l'électricité. Nous
+              avons donc développé des systèmes solaires connectés, abordables et durables pour les ménages, les entreprises et les
+              lieux communautaires.</p>
+          </div>
+          <a href="/à-propos" class="btn btn--yellow">Notre histoire</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantage -->
+    <section class="home_advantage">
+      <div class="wrap grid">
+        <div class="content">
+          <h2 class="subtitle">Les avantages des <span class="t--yellow">solutions Solarly</span></h2>
+          <!-- SLIDER -->
+          <div class="slider">
+            <div class="slider_icon ">
+              <img src="./assets/images/Connection.svg" alt="Connection" />
+            </div>
+            <div class="swiper" js-slider>
+              <div class="slider_wrap swiper-wrapper">
+                <div class="swiper-slide">
+                  <p>Connectée et intelligente, permettant un suivi à distance</p>
+                </div>
+                <div class="swiper-slide">
+                  <p>Connectée et intelligente, permettant un suivi à distance</p>
+                </div>
+                <div class="swiper-slide">
+                  <p>Connectée et intelligente, permettant un suivi à distance</p>
+                </div>
+              </div>
+            </div>
+            <div class="slider_nav">
+              <button type="button" class="slider_btn slider_btn--prev" js-btn-prev>
+                <img src="./assets/images/arrow.svg" alt="Chevron" />
+              </button>
+              <button type="button" class="slider_btn slider_btn--next" js-btn-next>
+                <img src="./assets/images/arrow.svg" alt="Chevron" />
+              </button>
+            </div>
+          </div>
+          <a href="/à-propos" class="btn btn--green">En savoir plus</a>
+        </div>
+        <div class="illu">
+          <!-- ILLU -->
+          <img src="./assets/images/solarly.svg" alt="Solarly" />
+        </div>
+      </div>
+    </section>
   </main>
 
   <script src="./bundle.js"></script>

@@ -1,0 +1,71 @@
+@use "sass:math";
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+@mixin cancel-sr-only {
+  position: unset;
+  width: unset;
+  height: unset;
+  margin: unset;
+  padding: unset;
+  overflow: unset;
+  border: unset;
+  clip: unset;
+  pointer-events: unset;
+}
+
+@function toRem($value) {
+  @if getUnit($value)==pt {
+    @return $value;
+  }
+
+  $valRem: math.div($value, 16);
+  @return $valRem+rem;
+}
+
+// MAX
+@mixin mobile {
+  @media(max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media(max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin smallDesk {
+  @media(max-width: $smallDesk) {
+    @content;
+  }
+}
+
+// MIN
+@mixin minMobile {
+  $val: $mobile + 1px;
+  @debug $val;
+
+  @media(min-width: $val) {
+    @content;
+  }
+}
+
+@mixin minTablet {
+  $val: $tablet + 1px;
+  @debug $val;
+
+  @media(min-width: $val) {
+    @content;
+  }
+}

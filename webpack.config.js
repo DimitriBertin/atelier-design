@@ -10,12 +10,6 @@ module.exports = (env, { mode }) => ({
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      name: false,
-    },
-  },
   devServer: {
     client: {
       logging: 'error',
@@ -55,7 +49,6 @@ module.exports = (env, { mode }) => ({
     new MiniCssExtractPlugin({
       filename: 'styles.css',
       chunkFilename: '[id].css'
-
     }),
   ],
 })
