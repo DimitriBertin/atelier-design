@@ -1,12 +1,16 @@
 .header {
   position: relative;
   z-index: 999;
+
+  @include tablet {
+    background: white;
+    box-shadow: 19px 19px 43px rgba(0, 0, 0, 0.09);
+  }
   
   &_logo {
     height: 88px;
     display: flex;
     align-items: center;
-  
   }
   
   &_nav {
@@ -24,6 +28,10 @@
 
     @include smallDesk {
       max-width: 800px;
+    }
+
+    @include tablet {
+      display: none;
     }
   }
 
@@ -54,5 +62,9 @@
   &_wrap {
     display: flex;
     align-items: center;
+
+    @include tablet {
+      justify-content: space-between;
+    }
   }
 }

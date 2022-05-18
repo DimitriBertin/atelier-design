@@ -3,7 +3,12 @@
   z-index: 1;
   background: $dark;
   color: white;
+  padding: toRem(60) 0;
+  overflow: hidden;
 
+  @include tablet {
+    text-align: center;
+  }
   @include minTablet {
     padding: 200px 0 90px 0;
   }
@@ -14,14 +19,19 @@
     border-radius: 12px;
     padding: toRem(60) toRem(34);
     margin: toRem(80) 0;
+    max-width: toRem(252);
+    
+    @include tablet {
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     &_wrap {
       width: 100%;
       height: 100%;
     }
-    .swiper {
-      max-width: toRem(252);
 
+    .swiper {
       &-slide {
         width: 100%;
       }
@@ -92,6 +102,17 @@
       font-weight: 500;
       font-size: toRem(24);
       line-height: toRem(32);
+    }
+  }
+
+  .illu {
+    img {
+      max-width: 100%;
+      height: auto;
+      
+      @include tablet {
+        margin-top: toRem(60);
+      }
     }
   }
 }

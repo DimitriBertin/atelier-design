@@ -1,18 +1,35 @@
 .home {
   &_intro {
     position: relative;
-    min-height: calc(100vh - 88px);
     width: 100%;
     overflow: hidden;
     z-index: 3;
+    
+    @include minTablet {
+      min-height: calc(100vh - 88px);
+    }
 
     .illu {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50vw;
-      height: 50vw;
-      transform: translate(20%, -80px);
+      position: relative;
+      width: 100vw;
+      height: 100vw;
+      transform: translate(20%, -40px);
+
+      @include tablet {
+        max-width: 420px;
+        max-height: 420px;
+        order: 1;
+        z-index: -1;
+      }
+
+      @include minTablet {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 50vw;
+        transform: translate(20%, -80px);
+      }
 
       &_wrap {
         display: flex;
@@ -50,17 +67,27 @@
     }
     
     .content {
-      min-height: calc(100vh - 88px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include tablet {
+        margin: toRem(38) 0 toRem(66);
+        order: 2;
+      }
+
+      @include minTablet {
+        min-height: calc(100vh - 88px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     }
   }
 
   &_about {
     position: relative;
     z-index: 2;
-    margin-top: toRem(80);
+
+    @include minTablet {
+      margin-top: toRem(80);
+    }
 
     .illu {
       position: relative;
@@ -68,25 +95,41 @@
 
       &_wrap {
         position: relative;
-        transform: translateY(105px);
-
+        
         img {
-          border-radius: 0 toRem(16) toRem(16) 0;
+          max-width: 100%;
+          height: auto;
         }
 
-        &:after {
-          content: "";
-          position: absolute;
-          top: 0%;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: white;
-          z-index: -1;
-          transform: translate(32px, 32px) scaleX(1.1);
-          border-radius: 0 toRem(16) toRem(16) 0;
-          transform-origin: center right;
+        @include minTablet {
+          transform: translateY(105px);
+          
+          img {
+            border-radius: 0 toRem(16) toRem(16) 0;
+          }
+        
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: -1;
+            transform: translate(32px, 32px) scaleX(1.1);
+            border-radius: 0 toRem(16) toRem(16) 0;
+            transform-origin: center right;
+          }
         }
+      }
+    }
+
+    @include tablet {
+      .content {
+        padding: 0 toRem(20);
+        margin-top: toRem(80);
+        margin-bottom: toRem(66);
       }
     }
 
@@ -96,7 +139,7 @@
       }
   
       @include tablet {
-        padding-left: 0;
+        padding: 0;
       }
     }
 

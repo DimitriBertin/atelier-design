@@ -15,8 +15,14 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  @include tablet {
+    grid-template-columns: 100%;
+  }
 }
 
 .content {
-  max-width: toRem(360);
+  @include minTablet {
+    max-width: toRem(360);
+  }
 }

@@ -30,6 +30,13 @@
   }
   // border: 1px solid ;
 
+  &--m-full {
+    @include mobile {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
   &--yellow {
     border-color: $yellow;
 

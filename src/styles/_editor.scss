@@ -22,6 +22,10 @@
   font-family: $font;
   margin-top: 0;
   margin-bottom: toRem(16);
+
+  @include tablet {
+    font-size: toRem(28);
+  }
 }
 
 .subtitle {
@@ -31,6 +35,9 @@
   margin-bottom: toRem(16);
   font-weight: 600;
   line-height: toRem(42);
+  @include tablet {
+    font-size: toRem(22);
+  }
 }
 
 .t {
