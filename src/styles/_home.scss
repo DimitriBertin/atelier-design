@@ -144,9 +144,13 @@
     }
 
     &_title {
-      font-size: toRem(18);
+      font-size: toRem(15);
       font-weight: 900;
       margin: 0 0 toRem(24) 0;
+
+      @include minTablet {
+        font-size: toRem(18);
+      }
     }
   }
 }
