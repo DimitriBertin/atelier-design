@@ -44,13 +44,30 @@
     padding: 0;
 
     a {
+      display: flex;
       font-size: toRem(13);
       font-weight: 800;
       color: black;
       text-decoration: none;
+      overflow: hidden;
+
+      span {
+        transition: color .3s ease .15s;
+      }
+
+      &:hover {
+        span {
+          animation: rollUp .3s ease forwards;
+          color: $yellow;
+          transition-duration: 0s;
+        }
+      }
     }
 
     li {
+      display: flex;
+      overflow: hidden;
+
       &:not(:last-child) {
         @include minTablet {
           margin-right: toRem(32);
@@ -65,6 +82,21 @@
 
     @include tablet {
       justify-content: space-between;
+    }
+  }
+
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 19px 19px 43px rgba(0, 0, 0, 0.09);
+    animation: Ty .6s ease forwards;
+
+    .header_nav {
+      background: transparent;
+      box-shadow: none;
     }
   }
 }

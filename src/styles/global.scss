@@ -41,3 +41,14 @@ body {
     display: none;
   }
 }
+
+[js-scroll-animation] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all .6s ease-in-out;
+
+  &.is-appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
