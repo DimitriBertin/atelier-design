@@ -1,0 +1,91 @@
+.home_intro {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  z-index: 3;
+
+  @include minTablet {
+    min-height: calc(100vh - 88px);
+  }
+
+  .illu {
+    position: relative;
+    width: 100vw;
+    height: 100vw;
+    transform: translate(20%, -40px);
+
+    @include tablet {
+      max-width: 420px;
+      max-height: 420px;
+      order: 1;
+      z-index: -1;
+    }
+
+    @include minTablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50vw;
+      height: 50vw;
+      transform: translate(20%, -80px);
+    }
+
+    &_wrap {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &_circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border: 1px solid $yellow;
+      transform: scale(.9);
+      border-radius: 50%;
+      animation: waves 15s linear infinite;
+
+      &:nth-of-type(2) {
+        animation-delay: 5s;
+      }
+
+      &:last-of-type {
+        animation-delay: 10s;
+      }
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    @include tablet {
+      margin: toRem(38) 0 toRem(66);
+      order: 2;
+    }
+
+    @include minTablet {
+      min-height: calc(100vh - 88px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1.4);
+  }
+}

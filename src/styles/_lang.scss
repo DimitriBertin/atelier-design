@@ -36,6 +36,11 @@
       background: white;
       border-radius: 5px;
       display: none;
+
+      &.is-open {
+        display: block;
+        animation: fade .3s ease forwards;
+      }
     }
 
     li {

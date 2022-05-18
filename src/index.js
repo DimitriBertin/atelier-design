@@ -62,3 +62,18 @@ menuButton.addEventListener('click', () => {
     menu.classList.remove('is-open')
   }
 })
+
+// LANG
+
+const langBtn = document.querySelector('[js-lang-button')
+const lang = document.querySelector('[js-lang')
+
+let toggleLang = false
+langBtn.addEventListener('click', () => {
+  toggleLang = !toggleLang
+  if (toggleLang) {
+    lang.classList.add('is-open')
+  } else {
+    lang.classList.remove('is-open')
+  }
+})
