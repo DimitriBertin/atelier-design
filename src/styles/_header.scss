@@ -3,14 +3,23 @@
   z-index: 999;
 
   @include tablet {
-    background: white;
-    box-shadow: 19px 19px 43px rgba(0, 0, 0, 0.09);
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      box-shadow: 19px 19px 43px rgba(0, 0, 0, 0.09);
+    }
   }
   
   &_logo {
     height: 88px;
     display: flex;
     align-items: center;
+    z-index: 2;
   }
   
   &_nav {
@@ -31,8 +40,36 @@
     }
 
     @include tablet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: auto;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      align-items: flex-start;
+      box-shadow: none;
+      background: $yellow--light;
+      padding-top: toRem(88);
+      z-index: -1;
       display: none;
+      opacity: 0;
+      transform: translateY(50px);
+
+      &.is-open {
+        display: flex;
+        animation: fade .3s ease forwards;
+      }
+
+      .btn {
+        order: 3;
+      }
     }
+  }
+
+  &_btnMenu {
+    position: relative;
+    z-index: 2;
   }
 
   &_menu {
@@ -43,6 +80,14 @@
     margin: 0 toRem(40) 0 0;
     padding: 0;
 
+    @include tablet {
+      display: block;
+      height: auto;
+      width: 100%;
+      order: 2;
+      margin-bottom: toRem(30);
+    }
+
     a {
       display: flex;
       font-size: toRem(13);
@@ -50,6 +95,16 @@
       color: black;
       text-decoration: none;
       overflow: hidden;
+
+      @include tablet {
+        font-size: toRem(22);
+        font-weight: 400;
+        padding: toRem(24) 0;
+
+        &.is-active {
+          font-weight: bold;
+        }
+      }
 
       span {
         transition: color .3s ease .15s;
@@ -66,12 +121,15 @@
 
     li {
       display: flex;
-      overflow: hidden;
 
       &:not(:last-child) {
         @include minTablet {
           margin-right: toRem(32);
         }
+      }
+
+      @include tablet {
+        border-bottom: 1px solid $yellow;
       }
     }
   }
@@ -94,7 +152,7 @@
     box-shadow: 19px 19px 43px rgba(0, 0, 0, 0.09);
     animation: Ty .6s ease forwards;
 
-    .header_nav {
+    .header_nav:not(.is-open) {
       background: transparent;
       box-shadow: none;
     }

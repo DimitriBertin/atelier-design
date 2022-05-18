@@ -28,7 +28,7 @@ const swiper = new Swiper('[js-slider]', {
   },
 })
 
-// APPARITION
+// APPARITION --------------------------
 const blocks = document.querySelectorAll('[js-scroll-animation]')
 
 var options = {
@@ -48,8 +48,17 @@ for (const block of blocks) {
 }
 
 
-// Menu
+// Menu ----------------------
 const menuButton = document.querySelector('[js-menu-button]')
 const menu = document.querySelector('[js-menu]')
-
-// PARALLAX
+let toggleOpen = false
+menuButton.addEventListener('click', () => {
+  toggleOpen = !toggleOpen
+  if (toggleOpen) {
+    document.body.style.overflow = 'hidden'
+    menu.classList.add('is-open')
+  } else {
+    document.body.style.overflow = 'auto'
+    menu.classList.remove('is-open')
+  }
+})

@@ -16,17 +16,17 @@
 <body class="home">
   <header class="header">
     <div class="wrap">
-      <nav class="header_wrap" role="navigation" aria-label="Menu principal">
+      <nav class="header_wrap" role="navigation" aria-label="Menu principal" >
         <a href="/" class="header_logo">
           <img src="./assets/images/LOGO SALYRL.svg" alt="Salyrl" />
         </a>
-        <button type="button" class="header_btnMenu btn btn--yellow mobile">
+        <button type="button" class="header_btnMenu btn btn--yellow mobile" js-menu-button>
           <span class="btn_label"><span class="sr-only">Ouvrir le</span> Menu</span>
         </button>
-        <div class="header_nav">
+        <div class="header_nav" js-menu>
           <ul class="header_menu">
             <li>
-              <a href="/solutions"><span>Solutions</span></a>
+              <a href="/solutions" class="is-active"><span>Solutions</span></a>
             </li>
             <li>
               <a href="/a-propos"><span>À propos</span></a>
@@ -41,12 +41,12 @@
               <a href="/faq"><span>FAQ</span></a>
             </li>
           </ul>
-          <a href="/contact" class="btn btn--yellow">
+          <a href="/contact" class="btn btn--yellow btn--m-full">
             <span class="btn_label">Contact</span></a>
           <div class="lang">
             <button type="button" class="lang_button">FR <img src="./assets/images/arrow.svg" /></button>
             <ul class="lang_select">
-              <li><a href="/">FR</a></li>
+              <li><a href="/" class="is-active">FR</a></li>
               <li><a href="/en">EN</a></li>
             </ul>
           </div>
